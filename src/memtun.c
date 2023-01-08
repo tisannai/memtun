@@ -92,16 +92,22 @@ void* mt_free( mt_t mt, void* ptr )
 
 static void* mt_malloc_wrap( void* cmm, size_t size )
 {
+    (void)cmm;
+
     return st_alloc( size );
 }
 
 static void* mt_realloc_wrap( void* cmm, void* ptr, size_t size )
 {
+    (void)cmm;
+
     return st_realloc( ptr, size );
 }
 
 static void* mt_free_wrap( void* cmm, void* ptr )
 {
+    (void)cmm;
+
     st_del( ptr );
     return NULL;
 }
